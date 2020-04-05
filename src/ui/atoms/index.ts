@@ -1,0 +1,7 @@
+export { H1 } from './h1'
+export { H2 } from './h2'
+export { Button } from './button'
+export { Input } from './input'
+export { P } from './p'
+export { Link } from './link'
+export { Image } from './image'
