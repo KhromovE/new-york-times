@@ -1,5 +1,4 @@
-import { request } from '../../lib/request'
-import { ArticlesDataParams, ArticlesData } from './types'
+import { createRequest } from '../../lib/request'
+import { ArticlesData } from './types'
 
-export const loadArticlesData = (params: ArticlesDataParams): Promise<ArticlesData> =>
-  request<ArticlesData>('GET', 'articlesearch.json', params)
+export const loadArticlesData = createRequest<ArticlesData>('GET', 'articlesearch.json')

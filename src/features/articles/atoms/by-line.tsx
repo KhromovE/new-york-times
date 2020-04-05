@@ -6,6 +6,7 @@ export const ByLine = styled.span`
   padding: 0 0 1.5rem;
   text-align: center;
   display: block;
+  font-family: 'Playfair Display', serif;
 
   &:before,
   &:after {

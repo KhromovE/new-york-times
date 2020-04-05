@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import Logo from '../../../assets/logo.svg'
+import Logo from '../../../assets/images/logo.svg'
 
 const Wrapper = styled.header`
   padding: 0 0.5rem;

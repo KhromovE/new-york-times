@@ -16,6 +16,7 @@ const Content = styled.main`
 const Subline = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 0 1rem;
   align-items: center;
   border-top: 2px solid;
   border-bottom: 2px solid;

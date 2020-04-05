@@ -1,14 +1,21 @@
-export type ArticlesDataParams = Readonly<{
+export type RequestParams = Readonly<{
   q?: string
   page?: number
   sort?: string
   fl?: string
 }>
 
+export type Multimedia = Readonly<{
+  url: string
+  width: number
+  height: number
+  subtype: string
+}>
+
 export type ArticlesData = Readonly<{
   response: {
     docs: {
-      multimedia: { url: string }[]
+      multimedia: Multimedia[]
       lead_paragraph: string
       abstract: string
       headline: {
@@ -18,15 +25,9 @@ export type ArticlesData = Readonly<{
       byline: { original: string }
       word_count: string
       _id: string
+      web_url: string
     }[]
   }
-}>
-
-export type Multimedia = Readonly<{
-  url: string
-  width: number
-  height: number
-  subtype: string
 }>
 
 export type Article = Readonly<{

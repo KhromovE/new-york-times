@@ -1,12 +1,13 @@
 import React from 'react'
 import { renderRoutes, RouteConfig } from 'react-router-config'
-import { ArticleDetails, Articles } from './features/articles/pages'
+
+import { ArticleDetails, Main } from './features/articles/pages'
 
 const routes: RouteConfig[] = [
   {
     path: '/',
     exact: true,
-    component: Articles,
+    component: Main,
   },
   {
     path: '/article/:id',

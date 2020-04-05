@@ -1,0 +1,7 @@
+{
+  "rules": {
+     "import/no-default-export": "off",
+     "no-redeclare": "off",
+     "@typescript-eslint/no-explicit-any": "off"
+  }
+}

@@ -4,15 +4,15 @@ import {
   getItems,
   updateQuery,
   toggleSort,
-  $sort,
   $pageCount,
-  $isPending,
   $list,
+  $isPending,
+  $isFailed,
+  $query,
+  $sort,
 } from '../../models'
 import { generateNumber } from '../../../../lib/utils'
 import { SkeletonArticle } from '../../types'
-
-export { $query } from '../../models'
 
 const generateSkeletonArticleList = (count: number): SkeletonArticle[] =>
   Array(count)
@@ -25,15 +25,14 @@ const generateSkeletonArticleList = (count: number): SkeletonArticle[] =>
       pictureSize: generateNumber(100, 120),
     }))
 
-export const pageEnded = createEvent()
+export const loadMore = createEvent()
 export const searchFieldUpdated = createEvent<string>()
 export const sortClicked = createEvent()
 
-export const $sortIconRotated = $sort
-export const $firstTimePending = combine({ list: $list, isPending: $isPending }).map(
+const $firstTimePending = combine({ list: $list, isPending: $isPending }).map(
   ({ list, isPending }) => list.length === 0 && isPending,
 )
-export const $articles = combine({
+const $articles = combine({
   list: $list,
   pageCount: $pageCount,
   isPending: $firstTimePending,
@@ -45,8 +44,17 @@ export const $articles = combine({
   return list
 })
 
+export const $store = combine({
+  isFailed: $isFailed,
+  isPending: $isPending,
+  query: $query,
+  sort: $sort,
+  firstTimePending: $firstTimePending,
+  articles: $articles,
+})
+
 forward({
-  from: pageEnded,
+  from: loadMore,
   to: getItems,
 })
 

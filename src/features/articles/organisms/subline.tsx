@@ -2,11 +2,12 @@ import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useDebouncedCallback } from 'use-debounce'
 
+import { DateString } from '../atoms'
 import { SortButton } from '../molecules'
 import { Field } from '../../../ui/molecules'
 import { DEBOUNCE_DELAY } from '../../../constants/search'
 import { Sort } from '../types'
-import Loupe from '../../../assets/loupe-thin.svg'
+import Loupe from '../../../assets/images/loupe-thin.svg'
 
 type Props = {
   onChangeSearch: (query: string) => void
@@ -17,6 +18,10 @@ type Props = {
 
 const SearchWrapper = styled.section`
   display: flex;
+
+  @media only screen and (max-width: 552px) {
+    width: 100%;
+  }
 `
 
 export const Subline: React.FC<Props> = ({
@@ -30,7 +35,7 @@ export const Subline: React.FC<Props> = ({
 
   return (
     <>
-      <span />
+      <DateString />
       <SearchWrapper>
         <Field
           onChange={handleChange}

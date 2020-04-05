@@ -17,7 +17,7 @@ const Wrapper = styled.section`
 `
 
 const PictureWrapper = styled.div`
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 `
 
 export const ArticleSkeleton: React.FC<Props> = ({ data, style }) => {

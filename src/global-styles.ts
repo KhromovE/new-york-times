@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: "Gentium Basic", serif;
     background-color: var(--newspapper);
     color: var(--primary);
+    font-family: 'Droid Serif', serif;
   }
 
   * {

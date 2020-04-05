@@ -50,7 +50,7 @@
     "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-wrap-multilines": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

@@ -1,23 +1,24 @@
-import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { useStore } from 'effector-react'
+import React from 'react'
+import { useParams, Redirect } from 'react-router-dom'
+import { useStoreMap } from 'effector-react'
 
 import { MainTemplate } from '../../../../ui/templates'
+import { DateString } from '../../atoms'
 import { Header } from '../../molecules'
 import { FullArticle } from '../../organisms'
-import { $article, pageLoaded } from './model'
+import { $store } from './model'
 
 export const ArticleDetails: React.FC = () => {
   const { id } = useParams()
-  const article = useStore($article)
-
-  useEffect(() => {
-    pageLoaded(id)
-  }, [id])
+  const article = useStoreMap({
+    store: $store,
+    keys: [id],
+    fn: ({ list }, [articleId]) => list.find((item) => item.id === articleId) || null,
+  })
 
   return (
-    <MainTemplate subline={<div>qwe</div>} header={<Header />}>
-      {article !== null && <FullArticle article={article} />}
+    <MainTemplate subline={<DateString noMobile="true" />} header={<Header />}>
+      {article !== null ? <FullArticle article={article} /> : <Redirect to="/" />}
     </MainTemplate>
   )
 }

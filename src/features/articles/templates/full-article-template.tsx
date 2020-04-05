@@ -6,7 +6,9 @@ type Props = {
   image?: React.ReactNode
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin: 0 1rem;
+`
 
 const ContentWrapper = styled.section`
   max-width: 40rem;

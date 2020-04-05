@@ -2,23 +2,12 @@ import React from 'react'
 import { useStore } from 'effector-react'
 
 import { MainTemplate } from '../../../../ui/templates'
-import {
-  $query,
-  $sortIconRotated,
-  $firstTimePending,
-  pageEnded,
-  searchFieldUpdated,
-  $articles,
-  sortClicked,
-} from './model'
+import { $store, loadMore, searchFieldUpdated, sortClicked } from './model'
 import { ArticleList, Subline } from '../../organisms'
 import { Header } from '../../molecules'
 
-export const Articles: React.FC = () => {
-  const articles = useStore($articles)
-  const searchValue = useStore($query)
-  const sortIconRotated = useStore($sortIconRotated)
-  const firstTimePending = useStore($firstTimePending)
+export const Main: React.FC = () => {
+  const { articles, query, sort, firstTimePending, isPending, isFailed } = useStore($store)
 
   return (
     <MainTemplate
@@ -27,16 +16,17 @@ export const Articles: React.FC = () => {
         <Subline
           onChangeSearch={searchFieldUpdated}
           onClickSort={sortClicked}
-          sortIconRotated={sortIconRotated}
-          defaultValue={searchValue}
+          sortIconRotated={sort}
+          defaultValue={query}
         />
       }
     >
       <ArticleList
         articles={articles}
         firstTimePending={firstTimePending}
-        pageEnded={pageEnded}
-        // isPending={isPending}
+        loadMore={loadMore}
+        isPending={isPending}
+        isFailed={isFailed}
       />
     </MainTemplate>
   )

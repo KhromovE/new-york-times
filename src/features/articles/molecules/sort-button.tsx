@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
 
-import SortIcon from '../../../assets/sort-thin.svg'
-import { Button } from '../../../ui/atoms'
+import SortIcon from '../../../assets/images/sort-thin.svg'
+import { IconButton } from '../../../ui/atoms'
 import { Sort } from '../types'
 
 type Props = {
@@ -14,15 +14,6 @@ type SortProps = {
   rotated: Sort
 }
 
-const StyledButton = styled(Button)`
-  border: 0;
-  background: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  margin-left: 0.5rem;
-`
-
 const StyledSortIcon = styled(SortIcon)<SortProps>`
   height: calc(100% - 0.5rem);
   width: 1.4rem;
@@ -33,8 +24,8 @@ export const SortButton: React.FC<Props> = ({ onClick, iconRotated }) => {
   const handleClick = useCallback(() => onClick(), [])
 
   return (
-    <StyledButton onClick={handleClick}>
+    <IconButton onClick={handleClick}>
       <StyledSortIcon rotated={iconRotated} />
-    </StyledButton>
+    </IconButton>
   )
 }

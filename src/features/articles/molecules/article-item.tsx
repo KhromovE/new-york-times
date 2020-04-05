@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import styled from 'styled-components'
-import {Link as RouterLink} from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 
 import { P, Link } from '../../../ui/atoms'
 import { ArticlePicture, ArticleHeading, ByLine } from '../atoms'
@@ -12,7 +12,7 @@ type Props = {
   style?: React.CSSProperties
 }
 
-const Art = styled.article`
+const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,6 +20,10 @@ const Art = styled.article`
   text-align: justify;
   hyphens: auto;
   padding: 1rem;
+`
+
+const StyledImage = styled(ArticlePicture)`
+  margin-bottom: 1rem;
 `
 
 export const ArticleItem: React.FC<Props> = memo(({ data, columnWidth, style }) => {
@@ -31,14 +35,14 @@ export const ArticleItem: React.FC<Props> = memo(({ data, columnWidth, style }) 
   }
 
   return (
-    <Art style={style}>
+    <Wrapper style={style}>
       <Link as={RouterLink} to={`/article/${data.id}`}>
         <ArticleHeading>{data.headline.main}</ArticleHeading>
 
         {data.byline.original && <ByLine>{data.byline.original}</ByLine>}
-        {img && <ArticlePicture data={img} columnWidth={columnWidth} />}
+        {img && <StyledImage data={img} columnWidth={columnWidth} />}
         <P>{data.abstract}</P>
       </Link>
-    </Art>
+    </Wrapper>
   )
 })
