@@ -1,14 +1,14 @@
 import { createStore, createEffect, guard, sample, combine, merge } from 'effector'
 import camelcaseKeys from 'camelcase-keys'
 
-import { ArticlesData, RequestParams, PreparedArticlesData, Sort } from '../types'
+import { ArticlesResponse, ArticlesParams, ArticlesData, Sort } from '../types'
 import { getItems, updateQuery, toggleSort } from './fetching.events'
 import { loadArticlesData } from '../api'
 import { CancelError } from '../../../lib/errors'
 
 // make request to the api
 const fxGetArticlesData = createEffect({
-  handler: (params: RequestParams) => {
+  handler: (params: ArticlesParams) => {
     return loadArticlesData.request(params)
   },
 })
@@ -31,8 +31,8 @@ export const filtersUpdated = merge([$sort.updates, $query.updates])
 
 // preparing data from api
 export const $normolizedArticlesData = fxGetArticlesData.done.map(
-  ({ result }: { result: ArticlesData }): PreparedArticlesData =>
-    camelcaseKeys<ArticlesData, PreparedArticlesData>(result, { deep: true }),
+  ({ result }: { result: ArticlesResponse }): ArticlesData =>
+    camelcaseKeys<ArticlesResponse, ArticlesData>(result, { deep: true }),
 )
 
 // if request was canceled make another one
@@ -77,7 +77,7 @@ sample({
 })
 
 // make a request only if there is another one is not executed
-guard<RequestParams>({
+guard<ArticlesParams>({
   source: sample({
     source: combine({ params: $params }),
     clock: getItems,

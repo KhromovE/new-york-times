@@ -1,4 +1,4 @@
-export type RequestParams = Readonly<{
+export type ArticlesParams = Readonly<{
   q?: string
   page?: number
   sort?: string
@@ -12,7 +12,7 @@ export type Multimedia = Readonly<{
   subtype: string
 }>
 
-export type ArticlesData = Readonly<{
+export type ArticlesResponse = Readonly<{
   response: {
     docs: {
       multimedia: Multimedia[]
@@ -44,7 +44,7 @@ export type Article = Readonly<{
   webUrl: string
 }>
 
-export type PreparedArticlesData = Readonly<{
+export type ArticlesData = Readonly<{
   response: {
     docs: Article[]
   }

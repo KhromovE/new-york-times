@@ -10,6 +10,7 @@ import { $store } from './model'
 
 export const ArticleDetails: React.FC = () => {
   const { id } = useParams()
+  // take article from list by id from params
   const article = useStoreMap({
     store: $store,
     keys: [id],

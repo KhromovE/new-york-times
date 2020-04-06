@@ -1,4 +1,4 @@
 import { createRequest } from '../../lib/request'
-import { ArticlesData } from './types'
+import { ArticlesResponse } from './types'
 
-export const loadArticlesData = createRequest<ArticlesData>('GET', 'articlesearch.json')
+export const loadArticlesData = createRequest<ArticlesResponse>('GET', 'articlesearch.json')

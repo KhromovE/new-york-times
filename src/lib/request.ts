@@ -51,6 +51,9 @@ export const createRequest = <T>(
           throw error
         })
     },
+    /**
+     * Cancel request and create new token
+     */
     cancel: (): void => {
       cancel()
       cancelToken = new CancelToken((c) => {
