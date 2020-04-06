@@ -595,4 +595,4 @@ module.exports={default:require("core-js/library/fn/promise"),__esModule:!0};
 },{"react":"n8MK","react-hot-loader":"aVip","styled-normalize":"twXN","./global-styles":"GdfY","./routes":"tL3g"}],"zo2T":[function(require,module,exports) {
 "use strict";var e=a(require("react-dom")),r=a(require("react")),t=require("react-router-dom"),u=require("./app");function a(e){return e&&e.__esModule?e:{default:e}}e.default.render(r.default.createElement(t.BrowserRouter,{basename:"/new-york-times"},r.default.createElement(u.App,null)),document.getElementById("root"));
 },{"react-dom":"jgeU","react":"n8MK","react-router-dom":"uc19","./app":"owv9"}]},{},["zo2T"], null)
-//# sourceMappingURL=src.1bc8e793.js.map
+//# sourceMappingURL=src.3e399fd9.js.map
