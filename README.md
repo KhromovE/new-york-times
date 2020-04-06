@@ -1,5 +1,3 @@
-# new-york-times
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -14,3 +12,4 @@ Open [http://localhost:1234](http://localhost:1234) to view it in the browser.
 Builds the app for production to the `dist` folder.<br>
 
 PS. .env is not ignored for your convenience.
+
