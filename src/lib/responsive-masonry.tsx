@@ -24,7 +24,7 @@ type Props<T> = {
  * Get count of the masonry column
  * @param breakpoints array of the breakpoints
  * @param width width of the container
- * @return column count
+ * @returns column count
  */
 const calculateColumnCount = (breakpoints: number[], width: number): number =>
   breakpoints.reduceRight(

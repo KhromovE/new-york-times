@@ -16,7 +16,7 @@ import { SkeletonArticle } from '../../types'
 
 /**
  * @param count count of list
- * @return skeleton list
+ * @returns skeleton list
  */
 const generateSkeletonArticleList = (count: number): SkeletonArticle[] =>
   Array(count)

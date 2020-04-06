@@ -12,7 +12,7 @@ const { CancelToken } = axios
  * Create function for making request
  * @param method method name
  * @param url endpoint of the request
- * @return request data
+ * @returns request data
  */
 export const createRequest = <T>(
   method: Method,
@@ -28,7 +28,7 @@ export const createRequest = <T>(
     /**
      * Create asnyc request function
      * @param params params object
-     * @return response
+     * @returns response
      */
     request: async (params): Promise<T> => {
       const key = process.env.API_KEY

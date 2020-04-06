@@ -7,7 +7,7 @@ import { Article } from '../types'
  * update current list with a new prepared data
  * @param list old list of data
  * @param payload new data
- * @return merged list
+ * @returns merged list
  */
 const topUpList = <T extends Record<string, any>>(list: T[], payload: T[]): T[] =>
   payload.reduce(

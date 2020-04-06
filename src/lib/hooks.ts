@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 /**
  * Store previous value
  * @param value stored value
- * @return stored value
+ * @returns stored value
  */
 export const usePrevious = (value: any): any => {
   const ref = useRef()

@@ -17,7 +17,7 @@ type Day = 'Sunday' | 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday'
 /**
  * Return a month name from the date
  * @param date instance of Date
- * @return month name
+ * @returns month name
  */
 export const getMonth = (date: Date = new Date()): Month => {
   const monthes: Month[] = [
@@ -41,7 +41,7 @@ export const getMonth = (date: Date = new Date()): Month => {
 /**
  * Return a day name from the date
  * @param instance of Date
- * @return day name
+ * @returns day name
  */
 export const getWeekDay = (date: Date = new Date()): Day => {
   const weekday: Day[] = [
