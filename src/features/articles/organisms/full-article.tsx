@@ -20,7 +20,7 @@ export const FullArticle: React.FC<Props> = ({ article }) => {
       image={
         image && (
           <Image
-            src={`${process.env.CONTENT_URI}/${image.url}`}
+            src={`${process.env.CONTENT_URL}/${image.url}`}
             alt="article image"
             loading="lazy"
           />

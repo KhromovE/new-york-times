@@ -1,15 +1,12 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import { Router } from 'react-router'
-import { createBrowserHistory } from 'history'
+import { BrowserRouter } from 'react-router-dom'
 
 import { App } from './app'
 
-const history = createBrowserHistory()
-
 ReactDOM.render(
-  <Router history={history}>
+  <BrowserRouter basename={process.env.BASE_URL}>
     <App />
-  </Router>,
+  </BrowserRouter>,
   document.getElementById('root'),
 )

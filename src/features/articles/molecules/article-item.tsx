@@ -22,13 +22,10 @@ const Wrapper = styled.article`
   padding: 1rem;
 `
 
-const StyledImage = styled(ArticlePicture)`
-  margin-bottom: 1rem;
-`
-
 export const ArticleItem: React.FC<Props> = memo(({ data, columnWidth, style }) => {
   const newStyle = style
   const img = data.multimedia.find((image) => image.subtype === 'blog225')
+  const imageWidth = columnWidth - 32
 
   if (newStyle && newStyle.left !== 0) {
     newStyle.borderLeft = '1px solid var(--primary)'
@@ -40,7 +37,7 @@ export const ArticleItem: React.FC<Props> = memo(({ data, columnWidth, style }) 
         <ArticleHeading>{data.headline.main}</ArticleHeading>
 
         {data.byline.original && <ByLine>{data.byline.original}</ByLine>}
-        {img && <StyledImage data={img} columnWidth={columnWidth} />}
+        {img && <ArticlePicture data={img} imageWidth={imageWidth} />}
         <P>{data.abstract}</P>
       </Link>
     </Wrapper>
