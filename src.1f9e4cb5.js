@@ -595,4 +595,4 @@ module.exports={default:require("core-js/library/fn/promise"),__esModule:!0};
 },{"react":"n8MK","react-hot-loader":"aVip","styled-normalize":"twXN","./global-styles":"GdfY","./routes":"tL3g"}],"zo2T":[function(require,module,exports) {
 "use strict";var e=o(require("react-dom")),r=o(require("react")),t=require("react-router"),u=require("history"),a=require("./app");function o(e){return e&&e.__esModule?e:{default:e}}var i=(0,u.createBrowserHistory)();e.default.render(r.default.createElement(t.Router,{history:i},r.default.createElement(a.App,null)),document.getElementById("root"));
 },{"react-dom":"jgeU","react":"n8MK","react-router":"LI7H","history":"Wop6","./app":"owv9"}]},{},["zo2T"], null)
-//# sourceMappingURL=new-york-times/src.1f9e4cb5.js.map
+//# sourceMappingURL=src.1f9e4cb5.js.map
