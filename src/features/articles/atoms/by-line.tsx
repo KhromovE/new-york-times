@@ -14,7 +14,7 @@ export const ByLine = styled.span`
     width: 70%;
     display: block;
     margin: 0 auto;
-    border-color: #2f2f2f;
+    border-color: var(--primary);
   }
 
   &:before {
