@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ByLine = styled.span`
   font-weight: 700;
   font-size: 0.94rem;
-  padding: 0 0 1.5rem;
+  padding: 0 0 1.25rem;
   text-align: center;
   display: block;
   font-family: 'Playfair Display', serif;
