@@ -51,6 +51,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-wrap-multilines": "off",
     "react/jsx-one-expression-per-line": "off",
+    "@typescript-eslint/no-explicit-any": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

@@ -14,6 +14,10 @@ import {
 import { generateNumber } from '../../../../lib/utils'
 import { SkeletonArticle } from '../../types'
 
+/**
+ * @param count count of list
+ * @return skeleton list
+ */
 const generateSkeletonArticleList = (count: number): SkeletonArticle[] =>
   Array(count)
     .fill(0)
@@ -29,9 +33,15 @@ export const loadMore = createEvent()
 export const searchFieldUpdated = createEvent<string>()
 export const sortClicked = createEvent()
 
+// true if data loading first time
 const $firstTimePending = combine({ list: $list, isPending: $isPending }).map(
   ({ list, isPending }) => list.length === 0 && isPending,
 )
+
+/**
+ * if list is empty and request is pending return generated skeleton list
+ * otherwise returns the articles
+ */
 const $articles = combine({
   list: $list,
   pageCount: $pageCount,
@@ -44,6 +54,7 @@ const $articles = combine({
   return list
 })
 
+// the combined store for the page
 export const $store = combine({
   isFailed: $isFailed,
   isPending: $isPending,
@@ -52,6 +63,8 @@ export const $store = combine({
   firstTimePending: $firstTimePending,
   articles: $articles,
 })
+
+/* forward events to the model */
 
 forward({
   from: loadMore,

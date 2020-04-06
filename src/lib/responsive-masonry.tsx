@@ -20,6 +20,12 @@ type Props<T> = {
   loadMore: Function
 }
 
+/**
+ * Get count of the masonry column
+ * @param breakpoints array of the breakpoints
+ * @param width width of the container
+ * @return column count
+ */
 const calculateColumnCount = (breakpoints: number[], width: number): number =>
   breakpoints.reduceRight(
     (acc, breakpoint, index) => (breakpoint < width ? acc : index),
@@ -33,6 +39,9 @@ const masiryStyle = {
   outline: 'none',
 }
 
+/**
+ * Responsive custom masory that can ask about more data
+ */
 export function ResponsiveMasory<T>({
   items,
   gutterSize = 1,
@@ -40,7 +49,7 @@ export function ResponsiveMasory<T>({
   render,
   loadMore,
 }: Props<T>): React.ReactElement {
-  const masonryRef: any = useRef(null) // eslint-disable-line @typescript-eslint/no-explicit-any
+  const masonryRef: any = useRef(null)
   const previousItems = usePrevious(items)
   const [fullWidth, setFullWidth] = useState(0)
   const [columnCount, setColumnCount] = useState(0)

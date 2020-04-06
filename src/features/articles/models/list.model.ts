@@ -3,7 +3,12 @@ import { createStore } from 'effector'
 import { $preparedArticlesData, filtersUpdated } from './fetching.model'
 import { Article } from '../types'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+/**
+ * update current list with a new prepared data
+ * @param list old list of data
+ * @param payload new data
+ * @return merged list
+ */
 const topUpList = <T extends Record<string, any>>(list: T[], payload: T[]): T[] =>
   payload.reduce(
     (acc, payloadItem) => {
@@ -18,6 +23,7 @@ const topUpList = <T extends Record<string, any>>(list: T[], payload: T[]): T[] 
     [...list],
   )
 
+// list of the prepared articles
 export const $list = createStore<Article[]>([])
 
 $list

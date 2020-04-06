@@ -5,7 +5,7 @@ import { Normalize } from 'styled-normalize'
 import { GlobalStyles } from './global-styles'
 import { Routes } from './routes'
 
-declare const module: any // eslint-disable-line @typescript-eslint/no-explicit-any
+declare const module: any
 
 const AppComponent: React.FC = () => (
   <>

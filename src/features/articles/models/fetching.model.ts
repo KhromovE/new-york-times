@@ -23,6 +23,8 @@ export const $sort = createStore<Sort>('newest')
 export const $query = createStore('')
 export const $page = createStore(0)
 export const $isFailed = createStore(false)
+
+// combination of param stores
 const $params = combine({ fl: $fl, q: $query, fq: $fq, sort: $sort, page: $page })
 
 export const filtersUpdated = merge([$sort.updates, $query.updates])
@@ -30,7 +32,7 @@ export const filtersUpdated = merge([$sort.updates, $query.updates])
 // preparing data from api
 export const $normolizedArticlesData = fxGetArticlesData.done.map(
   ({ result }: { result: ArticlesData }): PreparedArticlesData =>
-    camelcaseKeys<ArticlesData, PreparedArticlesData>(result, { deep: true }), // eslint-disable-line @typescript-eslint/no-explicit-any
+    camelcaseKeys<ArticlesData, PreparedArticlesData>(result, { deep: true }),
 )
 
 // if request was canceled make another one
@@ -49,9 +51,16 @@ export const $preparedArticlesData = $normolizedArticlesData.map((result) =>
 )
 export const $isPending = fxGetArticlesData.pending.map((pending) => pending)
 
+// toggle sort
 $sort.on(toggleSort, (sort) => (sort === 'newest' ? 'oldest' : 'newest'))
+
+// update search query string
 $query.on(updateQuery, (_, query) => query)
+
+// increment current page when request is ok
 $page.on(fxGetArticlesData.done, (state) => state + 1).reset(filtersUpdated)
+
+// toggle isFailed store when request is failed
 $isFailed.on(fxGetArticlesData.fail, () => true).reset(fxGetArticlesData)
 
 // if filters were updated take data from api

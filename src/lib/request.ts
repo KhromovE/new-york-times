@@ -8,6 +8,12 @@ type Params = Record<string, string | number | undefined>
 
 const { CancelToken } = axios
 
+/**
+ * Create function for making request
+ * @param method method name
+ * @param url endpoint of the request
+ * @return request data
+ */
 export const createRequest = <T>(
   method: Method,
   url: string,
@@ -19,6 +25,11 @@ export const createRequest = <T>(
   })
 
   return {
+    /**
+     * Create asnyc request function
+     * @param params params object
+     * @return response
+     */
     request: async (params): Promise<T> => {
       const key = process.env.API_KEY
       const uri = `${process.env.API_URI}/${url}?${new URLSearchParams({
