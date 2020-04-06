@@ -593,6 +593,6 @@ module.exports={default:require("core-js/library/fn/promise"),__esModule:!0};
 },{"react":"n8MK","react-router-config":"UhWb","./features/articles/pages":"Jint"}],"owv9":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.App=void 0;var e=a(require("react")),t=require("react-hot-loader"),r=require("styled-normalize"),l=require("./global-styles"),u=require("./routes");function a(e){return e&&e.__esModule?e:{default:e}}var n=function(){return e.default.createElement(e.default.Fragment,null,e.default.createElement(l.GlobalStyles,null),e.default.createElement(r.Normalize,null),e.default.createElement(u.Routes,null))},o=n;exports.App=o;
 },{"react":"n8MK","react-hot-loader":"aVip","styled-normalize":"twXN","./global-styles":"GdfY","./routes":"tL3g"}],"zo2T":[function(require,module,exports) {
-"use strict";var e=o(require("react-dom")),r=o(require("react")),t=require("react-router-dom"),u=require("./app");function o(e){return e&&e.__esModule?e:{default:e}}e.default.render(r.default.createElement(t.BrowserRouter,{basename:"https://khromove.github.io/new-york-times/"},r.default.createElement(u.App,null)),document.getElementById("root"));
+"use strict";var e=a(require("react-dom")),r=a(require("react")),t=require("react-router-dom"),u=require("./app");function a(e){return e&&e.__esModule?e:{default:e}}e.default.render(r.default.createElement(t.BrowserRouter,{basename:"/new-york-times"},r.default.createElement(u.App,null)),document.getElementById("root"));
 },{"react-dom":"jgeU","react":"n8MK","react-router-dom":"uc19","./app":"owv9"}]},{},["zo2T"], null)
-//# sourceMappingURL=src.7d064de8.js.map
+//# sourceMappingURL=src.a23b440b.js.map
