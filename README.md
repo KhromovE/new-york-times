@@ -1,3 +1,5 @@
+[DEMO](https://khromove.github.io/new-york-times/)
+
 ## Available Scripts
 
 In the project directory, you can run:
