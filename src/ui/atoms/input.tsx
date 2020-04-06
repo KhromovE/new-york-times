@@ -10,4 +10,5 @@ export const Input = styled.input`
   background-color: inherit;
   color: inherit;
   width: 100%;
+  border-radius: 0;
 `
