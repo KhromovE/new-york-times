@@ -33,7 +33,7 @@ export const ArticleItem: React.FC<Props> = memo(({ data, columnWidth, style }) 
 
   return (
     <Wrapper style={style}>
-      <Link as={RouterLink} to={`/article/${data.id}`}>
+      <Link as={RouterLink} to={`/article/${data.id}`} aria-label="Article">
         <ArticleHeading>{data.headline.main}</ArticleHeading>
 
         {data.byline.original && <ByLine>{data.byline.original}</ByLine>}

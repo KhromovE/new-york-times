@@ -25,7 +25,9 @@ export const ArticleListFooter: React.FC<Props> = ({ isPending, isFailed, loadMo
     return (
       <Text>
         Something went wrong, please{' '}
-        <LinkButton onClick={handleClick}>click to try again</LinkButton>
+        <LinkButton onClick={handleClick} type="button" aria-label="Try again">
+          click to try again
+        </LinkButton>
       </Text>
     )
   }

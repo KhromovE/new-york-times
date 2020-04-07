@@ -21,7 +21,7 @@ const StyledLogo = styled(Logo)`
 export const Header: React.FC = () => (
   <Wrapper>
     <LogoWrapper>
-      <Link to="/">
+      <Link to="/" aria-label="New York Times">
         <StyledLogo />
       </Link>
     </LogoWrapper>

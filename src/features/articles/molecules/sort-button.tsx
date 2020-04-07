@@ -24,7 +24,7 @@ export const SortButton: React.FC<Props> = ({ onClick, iconRotated }) => {
   const handleClick = useCallback(() => onClick(), [])
 
   return (
-    <IconButton onClick={handleClick}>
+    <IconButton onClick={handleClick} type="button" aria-label="Sort by date">
       <StyledSortIcon rotated={iconRotated} />
     </IconButton>
   )

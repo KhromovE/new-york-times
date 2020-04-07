@@ -38,11 +38,13 @@ export const Subline: React.FC<Props> = ({
       <DateString />
       <SearchWrapper>
         <Field
+          id="search"
           onChange={handleChange}
           defaultValue={defaultValue}
           placeholder="Search"
           type="search"
           addon={<Loupe />}
+          label="Search"
         />
         <SortButton iconRotated={sortIconRotated} onClick={onClickSort} />
       </SearchWrapper>
