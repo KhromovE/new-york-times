@@ -61,7 +61,7 @@
     "core-js": "^3.6.4",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-import-resolver-parcel": "^1.10.4",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^23.6.0",
