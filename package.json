@@ -55,7 +55,7 @@
     "@types/react-virtualized": "^9.21.9",
     "@types/styled-components": "^5.1.0",
     "@types/throttle-debounce": "^2.1.0",
-    "@typescript-eslint/eslint-plugin": "^2.32.0",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.32.0",
     "babel-plugin-styled-components": "^1.10.7",
     "core-js": "^3.6.4",
