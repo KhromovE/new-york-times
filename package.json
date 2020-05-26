@@ -24,7 +24,7 @@
     "axios": "^0.19.2",
     "camelcase-keys": "^6.2.2",
     "effector": "^20.15.6",
-    "effector-react": "^20.6.3",
+    "effector-react": "^20.7.2",
     "history": "^4.10.1",
     "parcel": "^1.12.4",
     "react": "^16.13.1",
