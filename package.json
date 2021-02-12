@@ -21,7 +21,7 @@
   "author": "Egor Khromov",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "camelcase-keys": "^6.2.2",
     "effector": "^20.15.6",
     "effector-react": "^20.7.4",
