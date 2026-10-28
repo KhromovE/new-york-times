@@ -27,6 +27,12 @@
       "jsx": true
     }
   },
+  "overrides": [
+    {
+      "files": ["src/ui/molecules/field.tsx"],
+      "rules": { "react/no-unused-prop-types": "off" }
+    }
+  ],
   "rules": {
     "import/no-default-export": "error",
     "import/prefer-default-export": "off", // Allow single Named-export
@@ -38,6 +44,22 @@
       }
     ],
     "@typescript-eslint/prefer-interface": "off", // also want to use "type"
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
+    "camelcase": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variableLike",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+        "leadingUnderscore": "allow"
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      { "extendDefaults": true, "types": { "Function": false } }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/jsx-filename-extension": [
       "warn",
       {
@@ -48,6 +70,7 @@
       }
     ],
     "react/prop-types": "off",
+    "react/require-default-props": "off",
     "react-hooks/rules-of-hooks": "error",
     "react/jsx-wrap-multilines": "off",
     "react/jsx-one-expression-per-line": "off",
